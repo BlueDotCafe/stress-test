@@ -1,4 +1,19 @@
 $(document).ready(function() {
+
+  var colors = ["red", "blue", "black", "yellow", "green"];
+
+  var colorsCounter = 0;
+  setInterval(function() {
+    // $(".container").css("background-color", colors[Math.floor(Math.random()*colors.length)]);
+    $(".jumbotron").css("background-color", colors[colorsCounter]);
+    if (colorsCounter === 4) {
+      colorsCounter = 0;
+    } else {
+      colorsCounter += 1;
+    }
+  }, 50);
+
+
   $("#stress-survey").submit(function(event) {
     event.preventDefault();
     $("#responses").show();
